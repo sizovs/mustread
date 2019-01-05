@@ -1,0 +1,8 @@
+.gitignore
+.nvmrc
+yarn*
+googleServiceAccount.json
+*.enc
+*.yml
+*.enc
+webpack.config.js

@@ -1,12 +1,14 @@
 const VueLoader = require('vue-loader')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const WriteFilePlugin = require('write-file-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const dest = path.resolve(__dirname, './dist')
 
 module.exports = {
   entry: './src/entry-client.js',
+  target: 'web',
   output: {
     path: dest,
     publicPath: '/',
@@ -18,7 +20,8 @@ module.exports = {
       { from: "src/static" }
     ]),
     new WriteFilePlugin(),
-    new VueLoader.VueLoaderPlugin()
+    new VueLoader.VueLoaderPlugin(),
+    // new BundleAnalyzerPlugin()
   ],  
   module: {
     rules: [  

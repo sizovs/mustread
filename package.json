@@ -1,5 +1,5 @@
 {
-  "name": "mustreadh.tech",
+  "name": "mustread.vue",
   "description": "Must-Read Tech Books",
   "version": "1.0.0",
   "author": "Eduards Sizovs <eduards@sizovs.net>",
@@ -9,21 +9,14 @@
     "build": "cross-env webpack --progress --hide-modules --mode=production"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.2",
-    "@fortawesome/free-solid-svg-icons": "^5.2.0",
-    "@fortawesome/vue-fontawesome": "^0.1.1",
-    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "dayjs": "^1.5.16",
-    "v-debounce": "^0.1.2",
     "vue": "^2.2.1",
     "vue-instantsearch": "^1.7.0",
-    "vue-notification": "^1.3.12",
-    "vue-progressbar": "^0.7.5",
+    "vue-meta": "^1.5.8",
+    "vue-observe-visibility": "^0.4.3",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "vuex-persistedstate": "^2.5.4",
-    "vuex-router-sync": "^5.0.0"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

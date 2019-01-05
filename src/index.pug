@@ -1,21 +1,53 @@
 doctype html
 html(lang='en')
   head
+    - var title = 'The best books for developers'
+    - var description = 'Open-source and crowd-sourced book listing.'
     meta(charset='UTF-8')
-    title Books Every Software Developer Should Read
+    title=title
     meta(name='viewport' content='width=device-width, initial-scale=1')
     meta(http-equiv='x-ua-compatible' content='ie=edge')
     meta(name='keywords' content='')
     meta(name='robots' content='index,follow')
-    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo+2:400,700,400italic")
-    link(rel='stylesheet' href='//jenil.github.io/bulmaswatch/lumen/bulmaswatch.min.css')
-    script(src="//cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.4/es6-shim.min.js")
+    meta(name='author' content='Eduards Sizovs')
+    meta(name='description' content=description)
+    meta(name='og:description' content=description)
+
+    meta(property='og:url' content='http://mustread.tech')
+    meta(property='og:type' content='website')
+    meta(property='og:image' content='http://mustread.tech/logo.png')
+    meta(property='og:image:width' content='512')
+    meta(property='og:image:height' content='512')
+
+    link(rel="shortcut icon" type="image/png" href="/logo.png")
+    link(rel="shortcut icon" sizes="64x64" href="/logo.png")
+    link(rel="icon" href="/logo.png")
+
+    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo+2:400,700")
+    link(rel='stylesheet' href='//unpkg.com/bulmaswatch@0.7.2/lumen/bulmaswatch.min.css')
+    link(rel="alternate" type="application/rss+xml" href="http://static.mustread.tech/rss.xml" title=title)
+    script(src="//cdn.jsdelivr.net/npm/es6-shim@0.35.4/es6-shim.min.js")
+    script(src="//cdn.jsdelivr.net/npm/whatwg-fetch@3.0/dist/fetch.umd.min.js")
+    script(src="//cdn.jsdelivr.net/npm/vanilla-lazyload@8.17.0/dist/lazyload.min.js")
     style.
       body, button, input, select, textarea {
         font-family: 'Exo 2'
       }
-    link(rel='shortcut icon' href='/favicon.png')
-    link(rel='icon' href='/favicon.png')
     script(src='//use.fontawesome.com/releases/v5.2.0/js/all.js' defer='')
+    script.
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(51776834, "init", {
+        id:51776834,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+      });
+    noscript
+      div
+        img(src="https://mc.yandex.ru/watch/51776834" style="position:absolute; left:-9999px;" alt="")    
   body
     #vue
+    script.
+      window.myLazyLoad = new LazyLoad({
+          elements_selector: ".lazy"
+      });      

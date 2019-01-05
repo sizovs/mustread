@@ -1,0 +1,32 @@
+language: node_js
+
+branches:
+  only:
+   - master
+
+cache:
+  directories:
+    - node_modules
+    - $HOME/google-cloud-sdk/
+
+env:
+  - PATH=$PATH:${HOME}/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_6813f64756c7_key -iv $encrypted_6813f64756c7_iv -in googleServiceAccount.json.enc -out express/googleServiceAccount.json -d
+  - if [ ! -d ${HOME}/google-cloud-sdk ]; then
+     curl https://sdk.cloud.google.com | bash;
+    fi
+  - npm i yarn -g
+
+script:
+  - yarn
+  - yarn build
+  - cd express
+  - yarn
+  - yarn build
+  - rm -rf node_modules
+  - yarn install --production
+  - cp -r ../dist/* ./dist
+  - gcloud -q auth activate-service-account --key-file googleServiceAccount.json
+  - gcloud functions deploy mustread --trigger-http --verbosity=debug --memory=2048MB --project=mustread-tech --runtime nodejs8
