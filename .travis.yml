@@ -7,16 +7,19 @@ branches:
 cache:
   directories:
     - node_modules
-    - $HOME/google-cloud-sdk/
+    - $HOME/gcloud/
 
 env:
-  - PATH=$PATH:${HOME}/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  - PATH=$PATH:$HOME/gcloud/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_6813f64756c7_key -iv $encrypted_6813f64756c7_iv -in googleServiceAccount.json.enc -out express/googleServiceAccount.json -d
-  - if [ ! -d ${HOME}/google-cloud-sdk ]; then
-     curl https://sdk.cloud.google.com | bash;
-    fi
+  - export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && 
+    echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && 
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && 
+    sudo apt-get update -y && 
+    sudo apt-get install google-cloud-sdk=228.0.0-0 -y
+  - gcloud --version
   - npm i yarn -g
 
 script:
