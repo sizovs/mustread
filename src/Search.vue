@@ -239,8 +239,6 @@ export default {
     },
     scrollTop(page) {
       window.scrollTo(0, 0)
-      console.log("paged")
-      // const that = this
     },
     refine(facet, value) {
       this.searchStore.algoliaHelper.addDisjunctiveFacetRefinement(facet, value)
