@@ -1,4 +1,5 @@
 const history = require('connect-history-api-fallback')
+const serveStatic = require('serve-static')
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
@@ -16,10 +17,16 @@ app.set('port', port)
 app.set('view cache', !devMode)
 app.set('views', path.join(__dirname, staticDir))
 
-const oneHour = 3600000 * 4
-app.use(express.static(staticDir, {
+const noCacheForIndex = (res, path) => {
+  if (serveStatic.mime.lookup(path) === 'text/html') {
+    res.setHeader('Cache-Control', 'public, max-age=0')
+  }
+}
+
+app.use(serveStatic(staticDir, {
   index: false,
-  maxAge: oneHour
+  maxAge: '1h',
+  setHeaders: noCacheForIndex
 }))
 
 app.get('/', (req, res) => {
