@@ -1,9 +1,10 @@
 [![Build Status](https://travis-ci.org/sizovs/mustread.svg?branch=master)](https://travis-ci.org/sizovs/mustread)
 
 # 📚  mustread.tech
-> Open-source and crowd-sourced book listing. 
 
-## How to run the app locally?
+> Open-source and crowd-sourced book listing.
+
+## Running the app locally
 
 ```
 # install yarn

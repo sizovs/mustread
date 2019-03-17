@@ -15,15 +15,11 @@
                   |  open-source and crowd-sourced book listing.
             .column.is-half
               .is-pulled-right
-                .buttons.is-hidden-mobile
-                  a.button(rel="noreferrer" href="https://twitter.com/share?url=https://mustread.tech&via=eduardsi&text=📚+Books+that+will+make+you+a+better+developer:" target="_blank") 
+                .buttons.is-hidden-mobile.is-right
+                  a.is-hidden-mobile.button(rel="noreferrer" href="https://twitter.com/share?url=https://mustread.tech&via=eduardsi&text=📚+Books+that+will+make+you+a+better+developer:" target="_blank") 
                     span.icon.is-small
                       i.fab.fa-twitter
                     span Tweet
-                  a.button(rel="noreferrer" href="https://ko-fi.com/M4M3NR55" target="_blank") 
-                    span.icon.is-small
-                      i.fa.fa-heart.has-text-danger
-                    span Buy me a coffee
                 p.has-text-right(v-if="$store.state.newBooks.isbn.length")
                   a(:href="'/books/isbn/' + $store.state.newBooks.isbn.join('/')")
                     | {{$store.state.newBooks.isbn.length}}
@@ -44,10 +40,6 @@
       .columns.is-centered.is-mobile
         .column.is-narrow
           .buttons.has-text-centered
-            a.button(rel="noreferrer" href="https://ko-fi.com/M4M3NR55" target="_blank") 
-              span.icon.is-small
-                i.fa.fa-heart.has-text-danger
-              span Buy me a coffee
             a.button(rel="noreferrer" href="https://twitter.com/intent/follow?screen_name=eduardsi" target="_blank") 
               span.icon.is-small
                 i.fab.fa-twitter
