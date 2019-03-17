@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: dest,
     publicPath: '/',
-    filename: `[name].[hash].js`
+    filename: `[name].js`
   },
   plugins: [
     new HtmlWebpackPlugin({template: './src/index.pug'}),
