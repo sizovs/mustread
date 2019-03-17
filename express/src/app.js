@@ -25,7 +25,7 @@ const noCacheForIndex = (res, path) => {
 
 app.use(serveStatic(staticDir, {
   index: false,
-  maxAge: '1h',
+  // maxAge: '1h',
   setHeaders: noCacheForIndex
 }))
 
