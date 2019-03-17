@@ -162,8 +162,8 @@ export default {
       forceShowCategories: false,
       processed: false,
       affiliates: {
-        'amazon.com': 'mustread0da-20',
-        'amazon.ca': 'mustread0c-20',
+        'amazon.com': 'mustr-20',
+        'amazon.ca': 'mustr00-20',
         'amazon.de': 'mustread033-21',
         'amazon.fr': 'mustread0f-21',
         'amazon.es': 'mustread03c-21',

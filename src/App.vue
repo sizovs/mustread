@@ -15,8 +15,12 @@
                   |  open-source and crowd-sourced book listing.
             .column.is-half
               .is-pulled-right
-                .buttons.is-hidden-mobile.is-right
-                  a.is-hidden-mobile.button(rel="noreferrer" href="https://twitter.com/share?url=https://mustread.tech&via=eduardsi&text=📚+Books+that+will+make+you+a+better+developer:" target="_blank") 
+                .buttons.is-hidden-mobile
+                  a.button(rel="noreferrer" href="https://github.com/sizovs/mustread-data" target="_blank") 
+                    span.icon.is-small
+                      i.fa.fa-plus
+                    span Add a book                
+                  a.button(rel="noreferrer" href="https://twitter.com/share?url=https://mustread.tech&via=eduardsi&text=📚+Books+that+will+make+you+a+better+developer:" target="_blank") 
                     span.icon.is-small
                       i.fab.fa-twitter
                     span Tweet
