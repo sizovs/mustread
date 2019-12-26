@@ -51,7 +51,8 @@ const store = new Vuex.Store({
   mutations: {
     gotStats(state, stats) {
       const thisMonth = dayjs().format("MMMM")
-      const newVideosThisMonth = stats[thisMonth]
+      const thisYear = dayjs().format("YYYY")
+      const newVideosThisMonth = stats[thisYear + "/" + thisMonth]
       if (newVideosThisMonth) {
         state.newBooks.month = thisMonth
         state.newBooks.isbn = newVideosThisMonth
