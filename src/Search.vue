@@ -162,7 +162,7 @@ export default {
       forceShowCategories: false,
       processed: false,
       affiliates: {
-        'amazon.com': 'mustr-20',
+        'amazon.com': 'sizovs-20',
         'amazon.ca': 'mustr00-20',
         'amazon.de': 'mustread033-21',
         'amazon.fr': 'mustread0f-21',
