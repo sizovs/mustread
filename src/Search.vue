@@ -100,7 +100,7 @@
                               | &nbsp;
                             .column.is-narrow
                               figure.image.is-16x16
-                                img.is-rounded(:src="'https://avatars.io/twitter/' + result.kudo" :alt="'Thanks to ' + result.kudo")
+                                img.is-rounded(:src="'https://twitter-avatar.now.sh/' + result.kudo" :alt="'Thanks to ' + result.kudo")
                     hr
 
       section.section(v-show="searchStore.totalPages > 1")
